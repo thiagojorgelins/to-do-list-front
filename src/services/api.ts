@@ -2,7 +2,7 @@ import axios from 'axios';
 import { LoginForm, RegisterForm, TaskForm, Task, PaginatedTasks } from '../types';
 
 const api = axios.create({
-  baseURL: process.env.API_URL,
+  baseURL: "http://localhost:8000",
 });
 
 api.interceptors.request.use((config) => {
