@@ -28,10 +28,10 @@ export function TaskList() {
   const handleDelete = async (id: number) => {
     try {
       await taskService.deleteTask(id);
-      toast.success("Tarefa excluída com sucesso");
+      toast.success('Tarefa excluída com sucesso');
       loadTasks(currentPage);
     } catch (error) {
-      toast.error("Erro ao excluir tarefa");
+      toast.error('Erro ao excluir tarefa');
     }
   };
 
@@ -61,14 +61,14 @@ export function TaskList() {
   return (
     <div className="space-y-4">
       <div className="space-y-4">
-        {taskData.data.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            onDelete={handleDelete}
-            onUpdate={handleUpdate}
-          />
-        ))}
+      {taskData?.data.map((task) => (
+        <TaskItem 
+          key={task.id} 
+          task={task} 
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
+        />
+      ))}
       </div>
 
       {/* Paginação */}
