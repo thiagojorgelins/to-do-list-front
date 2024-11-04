@@ -5,6 +5,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Tasks } from './pages/Tasks';
 import { PrivateRoute } from './components/PrivateRoute';
+import { TaskDetail } from './pages/TaskDetail';
 
 export default function App() {
   return (
@@ -22,6 +23,14 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route
+          path="/tasks/:id"
+          element={
+            <PrivateRoute>
+              <TaskDetail />
+            </PrivateRoute>
+          }
+        />
         </Routes>
       </Router>
       <Toaster position="top-right" />
