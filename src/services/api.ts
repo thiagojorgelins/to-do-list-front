@@ -35,6 +35,11 @@ export const taskService = {
     return response.data;
   },
 
+  async getTask(id: number): Promise<Task> {
+    const response = await api.get<Task>(`/tasks/${id}`);
+    return response.data;
+  },
+  
   async createTask(data: TaskForm) {
     const response = await api.post<Task>('/tasks/', data);
     return response.data;
